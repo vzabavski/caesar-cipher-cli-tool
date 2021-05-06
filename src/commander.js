@@ -3,32 +3,32 @@ const fs = require('fs');
 const { pipeline } = require('stream');
 const transform = require('stream-transform');
 const caesarCipher = require('./cipher')
+const optionsValidator = require('./validator')
 
 program
-    .option('-a --action <value>', 'string value', null)
-    .option('-s --shift <value>', 'integer value', null)
-    .option('-i --input <value>', 'string value')
-    .option('-o --output <value>', 'string value')
-    .parse();
+  .option('-a --action <value>', 'string value', null)
+  .option('-s --shift <value>', 'integer value', null)
+  .option('-i --input <value>', 'string value')
+  .option('-o --output <value>', 'string value')
+  .parse();
 
 const options = program.opts();
 
-if(!options.shift || !options.action) {
-    process.stderr.write('One of required parameters is not provided')
-    process.exit(1);
-}
+optionsValidator(options);
+
 const transformer = transform(function(data){
-    const modified = caesarCipher(options.action, +options.shift, data.toString())
-    return modified;
+  const modified = caesarCipher(options.action, +options.shift, data.toString())
+  return modified;
 })
+
+const input = options.input 
+const output = options.output
 pipeline(
-    fs.createReadStream(options.input),
+    fs.createReadStream(input),
     transformer,
-    fs.createWriteStream(options.output),
+    fs.createWriteStream(output, {flags: 'a'}),
     (err) => {
-      if (err) {
-        console.error('Pipeline failed.', err);
-      } else {
+      if (!err) {
         console.log('Pipeline succeeded.');
       }
     }
