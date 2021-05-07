@@ -5,6 +5,17 @@ const optionsValidator = ({ action, shift, input, output}) => {
     process.stderr.write('One of required parameters is not provided')
     process.exit(1);
   }
+
+  if(action !== 'encode' && action !== 'decode') {
+    process.stderr.write('There are only 2 available actions: encode / decode')
+    process.exit(1)
+  }
+
+  if(!Number.isInteger(+shift)) {
+    process.stderr.write('Shift value have to be integer')
+    process.exit(1);
+  }
+  
   try {
     if(!input || !output) {
       return

@@ -15,13 +15,13 @@ const options = program.opts();
 optionsValidator(options);
 
 pipeline(
-    inputHandler(options.input),
-    transformHandler(options.action, options.shift),
-    outputHandler(options.output),
-    (err) => {
-      if (!err) {
-        console.log('Pipeline succeeded.');
-      }
+  inputHandler(options.input),
+  transformHandler(options.action, options.shift),
+  outputHandler(options.output),
+  (err) => {
+    if (!err) {
+      console.log('Pipeline succeeded.');
     }
-  );
+  }
+);
 
