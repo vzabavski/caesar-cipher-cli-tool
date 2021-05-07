@@ -20,7 +20,7 @@ pipeline(
   outputHandler(options.output),
   (err) => {
     if (!err) {
-      console.log('Pipeline succeeded.');
+      console.log('\nPipeline succeeded.');
     }
   }
 );
