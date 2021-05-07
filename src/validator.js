@@ -6,6 +6,9 @@ const optionsValidator = ({ action, shift, input, output}) => {
     process.exit(1);
   }
   try {
+    if(!input || !output) {
+      return
+    }
     if(!fs.existsSync(input) || !fs.existsSync(output)) {
       process.stderr.write('Something wrong with current files')
       process.exit(1);
