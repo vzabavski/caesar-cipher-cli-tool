@@ -2,7 +2,10 @@ const caesarCipher = (action, shift, input) => {
   if (action === 'decode') {
     return caesarCipher('encode', 26 - shift, input);
   }
-  
+  if(shift < 0) {
+    return caesarCipher(action, 26 + shift, input);
+  }
+
   let output = '';
   for (let i = 0; i < input.length; i++) {
     let letter = input[i];
