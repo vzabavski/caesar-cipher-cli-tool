@@ -35,10 +35,10 @@ This tool implements Caesar cipher cryptography method.
 3. Run program in terminal
     * with provided test files
 
-            node index.js --action *your-action* --shift *value-of-shift* -input **test.txt** --output **result.txt**
+            node index.js -a *your-action* -s *value-of-shift* -i **test.txt** -o **result.txt**
     * with your own files
 
-            node index.js --action *your-action* --shift *value-of-shift* -input **your-file.txt** --output **your-file.txt**
+            node index.js -a *your-action* -s *value-of-shift* -i **your-file.txt** -o **your-file.txt**
     * with no files
 
-            node index.js --action *your-action* --shift *value-of-shift*
+            node index.js -a *your-action* -s *value-of-shift*
