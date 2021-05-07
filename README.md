@@ -11,9 +11,11 @@ This tool implements Caesar cipher cryptography method.
 
 ## Example of usage
 * Full name alias:
-    > `--action encode --shift 3 --input test.txt --output result.txt`
+
+        --action encode --shift 3 --input test.txt --output result.txt
 * Short alias:
-    > ` -a decode -s 6 -i test.txt -o result.txt`
+
+        -a decode -s 6 -i test.txt -o result.txt
 
 ## Optional parameters
 * If the ` --input ` parameter is missed you should use console as an input source.
@@ -27,12 +29,16 @@ This tool implements Caesar cipher cryptography method.
 
 ## Usage
 1. Clone this repository on your computer
-    > git clone https://github.com/vzabavski/caesar-cipher-cli-tool.git
+    
+        git clone https://github.com/vzabavski/caesar-cipher-cli-tool.git
 2. Open *caesar-cipher-cli-tool* directory on your computer
 3. Run program in terminal
     * with provided test files
-        > `node index.js --action *your-action* --shift *value-of-shift* -input **test.txt** --output **result.txt**`
+
+            node index.js --action *your-action* --shift *value-of-shift* -input **test.txt** --output **result.txt**
     * with your own files
-        > `node index.js --action *your-action* --shift *value-of-shift* -input **your-file.txt** --output **your-file.txt**`
+
+            node index.js --action *your-action* --shift *value-of-shift* -input **your-file.txt** --output **your-file.txt**
     * with no files
-        > `node index.js --action *your-action* --shift *value-of-shift*`
+
+            node index.js --action *your-action* --shift *value-of-shift*
