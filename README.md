@@ -1,5 +1,6 @@
 # Caesar cipher CLI tool
 
+If you have any questions, please, text me in Discord: __Vitaly Zabavski(@vzabavski)__
 
 This tool implements Caesar cipher cryptography method.
 
@@ -31,8 +32,11 @@ This tool implements Caesar cipher cryptography method.
 1. Clone this repository on your computer
     
         git clone https://github.com/vzabavski/caesar-cipher-cli-tool.git
-2. Open *caesar-cipher-cli-tool* directory on your computer
-3. Run program in terminal
+2. Install dependencies
+
+        npm --install
+3. Open *caesar-cipher-cli-tool* directory on your computer
+4. Run program in terminal
     * with provided test files
 
             node index.js -a *your-action* -s *value-of-shift* -i **test.txt** -o **result.txt**
