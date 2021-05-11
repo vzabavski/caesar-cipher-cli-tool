@@ -35,7 +35,7 @@ This tool implements Caesar cipher cryptography method.
 2. Install dependencies
 
         npm --install
-3. Open *caesar-cipher-cli-tool* directory on your computer
+3. Open *caesar-cipher-cli-tool/__src___* directory on your computer
 4. Run program in terminal
     * with provided test files
 
